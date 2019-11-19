@@ -1,8 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+
+// Components
 import App from "./App";
+
+// Styling
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+
+// Services
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(

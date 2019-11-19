@@ -1,5 +1,6 @@
 import React from "react";
 
+import Button from "react-bootstrap/Button";
 import "./Nav.css";
 export default function Nav() {
   return (
@@ -11,15 +12,9 @@ export default function Nav() {
           alt="train icon"
         />
         <div className="nav-right">
-          <button>
-            <h1>Next Ride</h1>
-          </button>
-          <button>
-            <h1>Contribute</h1>
-          </button>
-          <button>
-            <h1>Feedback</h1>
-          </button>
+          <Button className="nav-button">Next Ride</Button>
+          <Button className="nav-button">Contribute</Button>
+          <Button className="nav-button">Feedback</Button>
         </div>
       </nav>
     </div>

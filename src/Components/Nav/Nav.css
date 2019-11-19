@@ -3,24 +3,33 @@
   padding: 1.5rem;
 
   /* Other Styling */
-  background-color: #4f8636;
+  background: linear-gradient(#4f8636, #115f16);
+  overflow: hidden;
 }
 
 .nav-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4vh;
+  height: 3.5vh;
   margin: 0 3rem;
 }
 
 .nav-icon {
-  height: 225%;
-  align-self: center;
+  height: 150px;
+  padding-top: 30px;
+  /* align-self: center; */
 }
 
 .nav-right {
+  display: flex;
   align-self: center;
   justify-items: space-between;
-  width: 30%;
+
+  /* width: 30%; */
+}
+
+.nav-button {
+  margin: 0 0.5rem;
+  height: 100%;
 }
