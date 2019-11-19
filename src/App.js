@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+// Components
+import Nav from "./Components/Nav/Nav";
+
+// Styling
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <h1>Welcome to WinningTransit</h1>
+      <p>
+        There are many factors in life that are uncontrollable but the quality
+        of your train car does not have to be one of them. Be a part of our
+        community and learn to choose wisely on your next ride.
+      </p>
     </div>
   );
 }
