@@ -10,7 +10,17 @@ export default function Nav() {
           src="/icons/train_icon.png"
           alt="train icon"
         />
-        <h1>Insert NavBar here</h1>
+        <div className="nav-right">
+          <button>
+            <h1>Next Ride</h1>
+          </button>
+          <button>
+            <h1>Contribute</h1>
+          </button>
+          <button>
+            <h1>Feedback</h1>
+          </button>
+        </div>
       </nav>
     </div>
   );

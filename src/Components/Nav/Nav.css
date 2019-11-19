@@ -8,6 +8,8 @@
 
 .nav-content {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 4vh;
   margin: 0 3rem;
 }
@@ -15,4 +17,10 @@
 .nav-icon {
   height: 225%;
   align-self: center;
+}
+
+.nav-right {
+  align-self: center;
+  justify-items: space-between;
+  width: 30%;
 }
