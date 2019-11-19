@@ -1,6 +1,9 @@
 .nav-container {
   /* Positioning */
   padding: 1.5rem;
+  position: fixed;
+
+  width: 100vw;
 
   /* Other Styling */
   background: linear-gradient(#4f8636, #115f16);
