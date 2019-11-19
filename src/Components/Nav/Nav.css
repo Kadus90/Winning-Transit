@@ -1,0 +1,18 @@
+.nav-container {
+  /* Positioning */
+  padding: 1.5rem;
+
+  /* Other Styling */
+  background-color: #4f8636;
+}
+
+.nav-content {
+  display: flex;
+  height: 4vh;
+  margin: 0 3rem;
+}
+
+.nav-icon {
+  height: 225%;
+  align-self: center;
+}

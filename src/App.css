@@ -5,6 +5,10 @@ MDT Orange #ff8a00 #f90 darkorange hsl(32,100,50) rgb(255,138,0)
 White
 Dark Grey
 */
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
