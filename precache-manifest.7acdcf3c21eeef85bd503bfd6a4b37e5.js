@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e9e9f95a7b6465e63f510a84aec87199",
+    "revision": "69f6c61ad44eeb74f3919a620bbf640f",
     "url": "/Winning-Transit/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Winning-Transit/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "f8c1d0b64833715c5ef9",
+    "revision": "d72a0239496699a3f091",
     "url": "/Winning-Transit/static/css/main.a69e7667.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Winning-Transit/static/js/2.b9349695.chunk.js"
   },
   {
-    "revision": "f8c1d0b64833715c5ef9",
-    "url": "/Winning-Transit/static/js/main.e3747ef8.chunk.js"
+    "revision": "d72a0239496699a3f091",
+    "url": "/Winning-Transit/static/js/main.0b43740d.chunk.js"
   },
   {
     "revision": "2f567135451562428d66",
