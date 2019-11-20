@@ -41,23 +41,23 @@ export default class App extends Component {
     return (
       <div className="App">
         <Switch>
+          <Route exact path="/" render={props => <Home {...props} />} />
           <Route
             exact
-            path={process.env.PUBLIC_URL}
-            render={props => <Home {...props} />}
-          />
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/ride"}
+            path="/ride"
             render={props => (
               <Ride {...props} allStations={this.state.allStations} />
             )}
           />
           <Route
             exact
-            path={process.env.PUBLIC_URL + "/ride/:StationID"}
+            path="/ride/:StationID"
             render={props => (
-              <Station {...props} allStations={this.state.allStations} />
+              <Station
+                {...props}
+                allStations={this.state.allStations}
+                StationID={props.match.params.StationID}
+              />
             )}
           />
         </Switch>
