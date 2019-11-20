@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Winning-Transit/precache-manifest.2a1602e19f6d7e6fe04ae4a68adf9450.js"
+  "/Winning-Transit/precache-manifest.9ce6763f442c1d68a4b939dd95c4cd1a.js"
 );
 
 self.addEventListener('message', (event) => {
