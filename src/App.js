@@ -19,7 +19,7 @@ export default class App extends Component {
   componentDidMount() {
     // Get Station Data
     axios
-      .get(`http://miami-transit-api.herokuapp.com/api/TrainStations.json`)
+      .get(`https://miami-transit-api.herokuapp.com/api/TrainStations.json`)
       .then(res => {
         let stationData = res.data.RecordSet.Record;
         console.log(stationData);

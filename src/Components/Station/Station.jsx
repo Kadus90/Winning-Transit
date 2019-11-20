@@ -10,11 +10,11 @@ export default class Station extends Component {
 
   componentDidMount() {
     Axios.get(
-      `http://miami-transit-api.herokuapp.com/api/TrainTracker.json?StationID=${this.state.stationID}`
+      `https://miami-transit-api.herokuapp.com/api/TrainTracker.json?StationID=${this.state.stationID}`
     ).then(res => {
       console.log(res.data.RecordSet.Record);
-      //   this.setState( stationID: {res.data.RecordSet.Record.StationID}, station: {res.data.RecordSet.Record}
-      // );
+      let Station = res.data.RecordSet.Record;
+      this.setState({ station: Station });
     });
   }
 
