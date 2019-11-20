@@ -18,9 +18,17 @@
   margin: 0 3rem;
 }
 
+.nav-left {
+  display: flex;
+}
+.nav-title {
+  align-self: center;
+  width: 20rem;
+}
 .nav-icon {
   height: 150px;
   padding-top: 30px;
+  display: inline;
   /* align-self: center; */
 }
 
