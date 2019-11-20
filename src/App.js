@@ -23,6 +23,7 @@ export default class App extends Component {
       .then(res => {
         let stationData = res.data.RecordSet.Record;
         console.log(stationData);
+        console.log("What what what");
 
         let stationArray = stationData.map(eachStation => {
           let id = eachStation.StationID;
