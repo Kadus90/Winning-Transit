@@ -48,14 +48,14 @@ export default class App extends Component {
           />
           <Route
             exact
-            path={process.env.PUBLIC_URL + "ride"}
+            path={process.env.PUBLIC_URL + "/ride"}
             render={props => (
               <Ride {...props} allStations={this.state.allStations} />
             )}
           />
           <Route
             exact
-            path={process.env.PUBLIC_URL + "ride/:StationID"}
+            path={process.env.PUBLIC_URL + "/ride/:StationID"}
             render={props => (
               <Station {...props} allStations={this.state.allStations} />
             )}
