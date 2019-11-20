@@ -1,45 +1,73 @@
 import React from "react";
+import { Component } from "react";
 import axios from "axios";
+import { Switch, Route, Link } from "react-router-dom";
 
 // Components
-import Nav from "./Components/Nav/Nav";
-import Hero from "./Components/Hero/Hero";
+import Home from "./Components/Home/Home";
+import Ride from "./Components/Ride/Ride";
 
 // Styling
 import "./App.css";
 
-function App() {
-  // Create the collection
-  // axios
-  //   .post("https://ironrest.herokuapp.com/createCollection/winningTransit")
-  //   .then(res => {
-  //     console.log(res.data);
-  //   });
+export default class App extends Component {
+  state = {
+    allStations: []
+  };
 
-  // Post to the collection
-  // axios
-  //   .post("https://ironrest.herokuapp.com/winningTransit", {
-  //     testing: "Winning"
-  //   })
-  //   .then(res => {
-  //     console.log(res.data);
-  //   });
+  componentDidMount() {
+    // Get Station Data
+    axios
+      .get(`http://miami-transit-api.herokuapp.com/api/TrainStations.json`)
+      .then(res => {
+        let stationData = res.data.RecordSet.Record;
+        console.log(stationData);
 
-  // Delete an item from the collection.
-  // axios
-  //   .delete(
-  //     "https://ironrest.herokuapp.com/winningTransit/5dd43f3e7b55290017a2b1aa"
-  //   )
-  //   .then(res => {
-  //     console.log(res.data);
-  //   });
+        let stationArray = stationData.map(eachStation => {
+          let id = eachStation.StationID;
+          let stationName = eachStation.Station;
+          return { StationID: id, Station: stationName };
+        });
 
-  return (
-    <div className="App">
-      <Nav />
-      <Hero />
-    </div>
-  );
+        console.log(stationArray);
+        // const stations = res.data;
+        this.setState({ allStations: stationArray });
+      });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route exact path="/ride" render={props => <Ride {...props} />} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default App;
+// Create the collection
+// axios
+//   .post("https://ironrest.herokuapp.com/createCollection/winningTransit")
+//   .then(res => {
+//     console.log(res.data);
+//   });
+
+// Post to the collection
+// axios
+//   .post("https://ironrest.herokuapp.com/winningTransit", {
+//     testing: "Winning"
+//   })
+//   .then(res => {
+//     console.log(res.data);
+//   });
+
+// Delete an item from the collection.
+// axios
+//   .delete(
+//     "https://ironrest.herokuapp.com/winningTransit/5dd43f3e7b55290017a2b1aa"
+//   )
+//   .then(res => {
+//     console.log(res.data);
+//   });
