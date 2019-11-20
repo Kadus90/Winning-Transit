@@ -6,6 +6,7 @@ import { Switch, Route, Link } from "react-router-dom";
 // Components
 import Home from "./Components/Home/Home";
 import Ride from "./Components/Ride/Ride";
+import Station from "./Components/Station/Station";
 
 // Styling
 import "./App.css";
@@ -51,7 +52,7 @@ export default class App extends Component {
             exact
             path="/ride/:StationID"
             render={props => (
-              <Ride {...props} allStations={this.state.allStations} />
+              <Station {...props} allStations={this.state.allStations} />
             )}
           />
         </Switch>

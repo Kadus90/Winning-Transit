@@ -1,30 +1,17 @@
 import React from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Component } from "react";
 
 import "./Ride.css";
 import Menu from "../Menu/Menu";
-export default function Ride(props) {
-  let printStations = () => {
-    return props.allStations.map((eachStation, i) => {
-      return (
-        <Dropdown.Item href={`/ride/${eachStation.StationID}`} key={i}>
-          {eachStation.Station}
-        </Dropdown.Item>
-      );
-    });
-  };
+import StationPicker from "../StationPicker/StationPicker";
 
-  let buildDropdown = () => {
-    return (
-      <DropdownButton id="dropdown-basic-button" title="Choose Your Station">
-        {printStations()}
-      </DropdownButton>
-    );
-  };
+export default function Ride(props) {
   return (
     <div>
       <Menu />
-      <div className="ride-page-content">{buildDropdown()}</div>
+      <div className="ride-page-content">
+        <StationPicker {...props} allStations={props.allStations} />
+      </div>
     </div>
   );
 }
