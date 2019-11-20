@@ -1,5 +1,5 @@
-.hero-container {
-  /* position: relative; */
+/* .hero-container {
+  position: relative;
   padding-top: 10rem;
   padding: 0 20%;
   height: 75vh;
@@ -8,12 +8,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0px 0px;
-  /* background-color: #1d1d22; */
+background-color: #1d1d22;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 
 .hero-text-area {
   background-color: rgba(42, 42, 42, 0.6);
