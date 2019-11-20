@@ -43,19 +43,19 @@ export default class App extends Component {
         <Switch>
           <Route
             exact
-            path="https://kadus90.github.io/Winning-Transit/"
+            path="process.env.PUBLIC_URL + '/'"
             render={props => <Home {...props} />}
           />
           <Route
             exact
-            path="https://kadus90.github.io/Winning-Transit/ride"
+            path="process.env.PUBLIC_URL + '/ride'"
             render={props => (
               <Ride {...props} allStations={this.state.allStations} />
             )}
           />
           <Route
             exact
-            path="https://kadus90.github.io/Winning-Transit/ride/:StationID"
+            path="process.env.PUBLIC_URL + '/ride/:StationID'"
             render={props => (
               <Station {...props} allStations={this.state.allStations} />
             )}
