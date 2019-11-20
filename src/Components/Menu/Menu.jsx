@@ -22,7 +22,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="nav-right">
-          <Link to={process.env.PUBLIC_URL + "ride"}>
+          <Link to={process.env.PUBLIC_URL + "/ride"}>
             <Button className="nav-button">Next Ride</Button>
           </Link>
           <Button className="nav-button">Contribute</Button>
