@@ -4,7 +4,10 @@ import "./Hero.css";
 
 export default function Hero() {
   return (
-    <div className="hero-container">
+    <div
+      className="hero-container"
+      style={{ backgroundImage: 'url("./img/brickellSouthboundTrain1.png")' }}
+    >
       <div className="hero-text-area">
         <h1 className="hero-title">Welcome to WinningTransit</h1>
         <p className="hero-text">
