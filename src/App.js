@@ -40,7 +40,20 @@ export default class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" render={props => <Home {...props} />} />
-          <Route exact path="/ride" render={props => <Ride {...props} />} />
+          <Route
+            exact
+            path="/ride"
+            render={props => (
+              <Ride {...props} allStations={this.state.allStations} />
+            )}
+          />
+          <Route
+            exact
+            path="/ride/:StationID"
+            render={props => (
+              <Ride {...props} allStations={this.state.allStations} />
+            )}
+          />
         </Switch>
       </div>
     );
