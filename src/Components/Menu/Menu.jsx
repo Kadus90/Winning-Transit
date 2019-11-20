@@ -13,7 +13,7 @@ export default function Nav() {
           <Link to="/">
             <img
               className="nav-icon"
-              src="/icons/train_icon.png"
+              src="./icons/train_icon.png"
               alt="train icon"
             />
           </Link>
