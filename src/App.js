@@ -9,7 +9,7 @@ import Ride from "./Components/Ride/Ride";
 import Station from "./Components/Station/Station";
 
 // Styling
-import "./App.css";
+import "./App.scss";
 
 export default class App extends Component {
   state = {
