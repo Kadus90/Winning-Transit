@@ -30,7 +30,7 @@ export default class Station extends Component {
     });
   };
 
-  updateTrains = prop => {
+  updateTrains = () => {
     let names = this.state.trains;
 
     Object.keys(names).map(async train => {
@@ -49,8 +49,23 @@ export default class Station extends Component {
         data: update.data.RecordSet
       };
 
-      this.setState({ trains: names });
+      this.setState({ trains: names }, () => this.loadCars(train));
     });
+  };
+
+  loadCars = train => {
+    let cars;
+    let trains = this.state.trains;
+
+    if (trains[train].data != "Data currently not available for this train.") {
+      cars = trains[train].data.Record.Cars.split("-");
+    } else {
+      cars = "Car data unavailable.";
+    }
+
+    trains[train].cars = cars;
+
+    this.setState({ trains: trains });
   };
 
   render() {
@@ -62,6 +77,8 @@ export default class Station extends Component {
       <div>
         <Ride {...this.props} allStations={this.props.allStations} />
         <h1>Welcome to {this.state.station.StationName} Station</h1>
+        <div className="north-bound-container"></div>
+        <div className="south-bound-container"></div>
       </div>
     );
   }
