@@ -57,7 +57,7 @@ export default class Station extends Component {
     let cars;
     let trains = this.state.trains;
 
-    if (trains[train].data != "Data currently not available for this train.") {
+    if (trains[train].data !== "Data currently not available for this train.") {
       cars = trains[train].data.Record.Cars.split("-");
     } else {
       cars = "Car data unavailable.";
@@ -68,9 +68,33 @@ export default class Station extends Component {
     this.setState({ trains: trains });
   };
 
+  generateTrainList = () => {
+    let allTrainKeys = Object.keys(this.state.trains);
+    let northTrains = [];
+    let southTrains = [];
+
+    console.log(allTrainKeys);
+    allTrainKeys.forEach(train => {
+      if (train.startsWith("north") === true) {
+        console.log("north Train!", northTrains, this.state.trains[train]);
+        northTrains.push(this.state.trains[train]);
+        console.log(northTrains);
+      }
+      if (train.startsWith("south") === true) {
+        console.log("south Train!");
+
+        southTrains.push(this.state.trains[train]);
+
+        console.log(southTrains);
+      }
+    });
+    // this.generateTrains(northTrains, southTrains);
+  };
+
   render() {
     if (this.props.StationID !== this.state.station.StationID) {
       this.updateStation();
+      this.generateTrainList();
     }
 
     return (
