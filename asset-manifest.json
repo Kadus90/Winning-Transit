@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Winning-Transit/static/css/main.a69e7667.chunk.css",
-    "main.js": "/Winning-Transit/static/js/main.cea51999.chunk.js",
-    "main.js.map": "/Winning-Transit/static/js/main.cea51999.chunk.js.map",
+    "main.js": "/Winning-Transit/static/js/main.c8cda9bf.chunk.js",
+    "main.js.map": "/Winning-Transit/static/js/main.c8cda9bf.chunk.js.map",
     "runtime-main.js": "/Winning-Transit/static/js/runtime-main.de4a5208.js",
     "runtime-main.js.map": "/Winning-Transit/static/js/runtime-main.de4a5208.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/Winning-Transit/static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.307bee59.chunk.js": "/Winning-Transit/static/js/2.307bee59.chunk.js",
-    "static/js/2.307bee59.chunk.js.map": "/Winning-Transit/static/js/2.307bee59.chunk.js.map",
+    "static/js/2.a7db0b9a.chunk.js": "/Winning-Transit/static/js/2.a7db0b9a.chunk.js",
+    "static/js/2.a7db0b9a.chunk.js.map": "/Winning-Transit/static/js/2.a7db0b9a.chunk.js.map",
     "index.html": "/Winning-Transit/index.html",
-    "precache-manifest.fc753449bebad36cedaaf72ebb10d472.js": "/Winning-Transit/precache-manifest.fc753449bebad36cedaaf72ebb10d472.js",
+    "precache-manifest.b75d2a1611e6403354591725abc79605.js": "/Winning-Transit/precache-manifest.b75d2a1611e6403354591725abc79605.js",
     "service-worker.js": "/Winning-Transit/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/Winning-Transit/static/css/2.b0bb7f2c.chunk.css.map",
     "static/css/main.a69e7667.chunk.css.map": "/Winning-Transit/static/css/main.a69e7667.chunk.css.map"
@@ -17,8 +17,8 @@
   "entrypoints": [
     "static/js/runtime-main.de4a5208.js",
     "static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.307bee59.chunk.js",
+    "static/js/2.a7db0b9a.chunk.js",
     "static/css/main.a69e7667.chunk.css",
-    "static/js/main.cea51999.chunk.js"
+    "static/js/main.c8cda9bf.chunk.js"
   ]
 }
