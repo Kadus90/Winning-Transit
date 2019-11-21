@@ -9,12 +9,12 @@ export default class Station extends Component {
   state = {
     station: {},
     trains: {
-      northTrain1: { name: "NB_Time1_Train" },
-      northTrain2: { name: "NB_Time2_Train" },
-      northTrain3: { name: "NB_Time3_Train" },
-      southTrain1: { name: "SB_Time1_Train" },
-      southTrain2: { name: "SB_Time2_Train" },
-      southTrain3: { name: "SB_Time3_Train" }
+      northTrain1: { name: "NB_Time1_Train", data: {}, cars: {} },
+      northTrain2: { name: "NB_Time2_Train", data: {}, cars: {} },
+      northTrain3: { name: "NB_Time3_Train", data: {}, cars: {} },
+      southTrain1: { name: "SB_Time1_Train", data: {}, cars: {} },
+      southTrain2: { name: "SB_Time2_Train", data: {}, cars: {} },
+      southTrain3: { name: "SB_Time3_Train", data: {}, cars: {} }
     }
   };
   componentDidMount() {
@@ -33,20 +33,23 @@ export default class Station extends Component {
   updateTrains = prop => {
     let names = this.state.trains;
 
-    Object.keys(names).map(async key => {
-      // console.log(key);
-      let result = await Axios.get(
+    Object.keys(names).map(async train => {
+      let update = await Axios.get(
         `http://miami-transit-api.herokuapp.com/api/Trains.json?TrainID=${
-          this.state.station[this.state.trains[key].name]
+          this.state.station[names[train].name]
         }`
       );
 
-      console.log("did this happen?");
-      console.log(key);
-      console.log(result);
-      // this.setState({
-      //   trains: { ...this.state.trains, [key]: result.data.RecordSet }
-      // });
+      if (this.state.station[names[train].name] === "SCH") {
+        update.data.RecordSet = "Data currently not available for this train.";
+      }
+
+      names[train] = {
+        ...names[train],
+        data: update.data.RecordSet
+      };
+
+      this.setState({ trains: names });
     });
   };
 
