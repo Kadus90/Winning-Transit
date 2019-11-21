@@ -1,5 +1,4 @@
 import React from "react";
-import { Component } from "react";
 
 import "./Ride.css";
 import Menu from "../Menu/Menu";

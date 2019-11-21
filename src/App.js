@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import axios from "axios";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 // Components
 import Home from "./Components/Home/Home";
@@ -22,8 +22,6 @@ export default class App extends Component {
       .get(`https://miami-transit-api.herokuapp.com/api/TrainStations.json`)
       .then(res => {
         let stationData = res.data.RecordSet.Record;
-        console.log(stationData);
-        console.log("What what what");
 
         let stationArray = stationData.map(eachStation => {
           let id = eachStation.StationID;
@@ -31,8 +29,6 @@ export default class App extends Component {
           return { StationID: id, Station: stationName };
         });
 
-        console.log(stationArray);
-        // const stations = res.data;
         this.setState({ allStations: stationArray });
       });
   }

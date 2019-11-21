@@ -8,7 +8,6 @@ import App from "./App";
 // Styling
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
 
 // Services
 import * as serviceWorker from "./serviceWorker";
