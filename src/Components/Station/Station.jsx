@@ -56,7 +56,7 @@ export default class Station extends Component {
 
     Object.keys(names).map(async train => {
       let update = await Axios.get(
-        `http://miami-transit-api.herokuapp.com/api/Trains.json?TrainID=${
+        `https://miami-transit-api.herokuapp.com/api/Trains.json?TrainID=${
           this.state.station[names[train].name]
         }`
       );
