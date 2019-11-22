@@ -1,40 +1,42 @@
 import React, { Component } from "react";
 
 import Ride from "../Ride/Ride";
+import Trains from "../Trains/Trains";
 import Axios from "axios";
 
-// stationID: this.props.match.params.StationID
+import "./Station.css";
 
 export default class Station extends Component {
   state = {
+    ready: false,
     station: {},
     trains: {
       northTrain1: {
         name: "NB_Time1_Train",
         data: {},
-        cars: {}
+        cars: []
       },
       northTrain2: {
         name: "NB_Time2_Train",
         data: {},
-        cars: {}
+        cars: []
       },
       northTrain3: {
         name: "NB_Time3_Train",
         data: {},
-        cars: {}
+        cars: []
       },
       southTrain1: {
         name: "SB_Time1_Train",
         data: {},
-        cars: {}
+        cars: []
       },
       southTrain2: {
         name: "SB_Time2_Train",
         data: {},
-        cars: {}
+        cars: []
       },
-      southTrain3: { name: "SB_Time3_Train", data: {}, cars: {} }
+      southTrain3: { name: "SB_Time3_Train", data: {}, cars: [] }
     }
   };
   componentDidMount() {
@@ -46,9 +48,12 @@ export default class Station extends Component {
     let result = await Axios.get(
       `https://miami-transit-api.herokuapp.com/api/TrainTracker.json?StationID=${this.props.StationID}`
     );
-    this.setState({ station: result.data.RecordSet.Record }, () => {
-      this.updateTrains();
-    });
+    this.setState(
+      { station: result.data.RecordSet.Record, ready: false },
+      () => {
+        this.updateTrains();
+      }
+    );
   };
 
   updateTrains = () => {
@@ -86,48 +91,13 @@ export default class Station extends Component {
 
     trains[train].cars = cars;
 
-    this.setState({ trains: trains });
+    this.setState({ trains: trains, ready: true });
   };
 
-  generateTrainList = () => {
-    let allTrainKeys = Object.keys(this.state.trains);
-    let northTrains = [];
-    let southTrains = [];
-
-    allTrainKeys.forEach(train => {
-      if (train.startsWith("north") === true) {
-        northTrains.push(this.state.trains[train]);
-      }
-      if (train.startsWith("south") === true) {
-        southTrains.push(this.state.trains[train]);
-      }
-    });
-    return this.generateTrains(northTrains, southTrains);
-  };
-
-  generateTrains = (north, south) => {
-    let northTrains = north.map((train, i) => {
-      if (train.data.Record != null) {
-        return <h2 key={i}>{train.data.Record.TrainID}</h2>;
-      } else {
-        return <h2 key={i}>Data unavailable</h2>;
-      }
-    });
-    let southTrains = south.map((train, i) => {
-      if (train.data.Record != null) {
-        return <h2 key={i}>{train.data.Record.TrainID}</h2>;
-      } else {
-        return <h2 key={i}>Data unavailable</h2>;
-      }
-    });
-    let allTrains = (
-      <div>
-        <div className="north-bound-container">{northTrains}</div>
-        <div className="south-bound-container">{southTrains}</div>
-      </div>
-    );
-    // console.log(northTrains);
-    return allTrains;
+  printTrains = () => {
+    if (this.state.ready === true) {
+      return <Trains {...this.state} />;
+    }
   };
 
   render() {
@@ -140,7 +110,7 @@ export default class Station extends Component {
       <div>
         <Ride {...this.props} allStations={this.props.allStations} />
         <h1>Welcome to {this.state.station.StationName} Station</h1>
-        <div>{this.generateTrainList()}</div>
+        {this.printTrains()}
       </div>
     );
   }

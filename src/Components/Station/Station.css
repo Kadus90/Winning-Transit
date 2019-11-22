@@ -1,0 +1,41 @@
+.trains-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  width: 100vw;
+
+  justify-content: center;
+}
+.north-bound-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  align-content: center;
+  flex-direction: column;
+  width: 35%;
+}
+.south-bound-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  width: 35%;
+}
+.trains-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  align-content: center;
+  justify-items: center;
+}
+.train {
+  padding: 10px;
+  margin: 10px;
+}
+.ORG {
+  background-color: #ff8a00;
+}
+.GRN {
+  background-color: #4f8636;
+}
