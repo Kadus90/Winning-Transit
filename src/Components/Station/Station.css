@@ -24,6 +24,7 @@
 }
 .trains-container {
   display: flex;
+  height: 80vh;
   /* padding: 0px 200px; */
   /* margin: 10px; */
   align-content: center;

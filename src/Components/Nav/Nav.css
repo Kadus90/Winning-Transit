@@ -90,7 +90,7 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  z-index: 100;
+  z-index: 1000;
 }
 
 /* Morph shape necessary with bubble or elastic */
