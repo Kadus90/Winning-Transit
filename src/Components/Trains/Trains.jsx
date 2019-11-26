@@ -15,13 +15,11 @@ export default function Trains(props) {
         southTrains.push(props.trains[train]);
       }
     });
-    // console.log(northTrains, southTrains);
     return generateTrains(northTrains, southTrains);
   };
 
   let generateTrains = (north, south) => {
     let northTrains = north.map((train, i) => {
-      //   this.loadCars(train);
       if (train.data.Record != null) {
         let line = train.data.Record.LineID;
         let trainStyles = "train " + line;
@@ -73,13 +71,10 @@ export default function Trains(props) {
         </div>
       </div>
     );
-    // console.log(northTrains);
     return allTrains;
   };
   let carPrint = carsArray => {
-    console.log("=-=-=-=-=-=-", carsArray);
     let cars = carsArray.map((eachItem, i) => {
-      console.log(eachItem);
       return (
         <div>
           <p key={i}>{eachItem}</p>
@@ -89,12 +84,5 @@ export default function Trains(props) {
 
     return cars;
   };
-  console.log(props);
-  //   console.log(generateTrainList());
-  return (
-    <div>
-      <h2>In Trains</h2>
-      {generateTrainList()}
-    </div>
-  );
+  return <div>{generateTrainList()}</div>;
 }

@@ -6,8 +6,8 @@ import { HashRouter } from "react-router-dom";
 import App from "./App";
 
 // Styling
-import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 // Services
 import * as serviceWorker from "./serviceWorker";
