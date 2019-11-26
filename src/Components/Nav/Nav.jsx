@@ -11,10 +11,13 @@ export default class Nav extends Component {
 
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
+
+    this.props.toggleBlue();
   }
 
   closeMenu() {
     this.setState({ menuOpen: false });
+    this.props.toggleBlue();
   }
 
   render() {

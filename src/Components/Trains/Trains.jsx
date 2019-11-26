@@ -73,15 +73,16 @@ export default function Trains(props) {
     return allTrains;
   };
   let carPrint = carsArray => {
-    let cars = carsArray.map((car, i) => {
-      return (
-        <div key={i}>
-          <p className="car">{car}</p>
-        </div>
-      );
-    });
-
-    return cars;
+    if (typeof carsArray === "object" && carsArray !== null) {
+      let cars = carsArray.map((car, i) => {
+        return (
+          <div key={i}>
+            <p className="car">{car}</p>
+          </div>
+        );
+      });
+      return cars;
+    }
   };
   return <div>{generateTrainList()}</div>;
 }

@@ -35,10 +35,10 @@
 
 #page-wrap {
   text-align: center;
-
-  padding-top: 35px;
+  height: 80vh;
+  padding-top: 15%;
   /* Prevent sidebar from showing a scrollbar on page */
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 /* Individual item */
@@ -90,7 +90,7 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 /* Morph shape necessary with bubble or elastic */

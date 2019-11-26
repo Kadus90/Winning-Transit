@@ -14,7 +14,8 @@ import "./App.css";
 
 export default class App extends Component {
   state = {
-    allStations: []
+    allStations: [],
+    showBlue: false
   };
 
   componentDidMount() {
@@ -33,7 +34,11 @@ export default class App extends Component {
         this.setState({ allStations: stationArray });
       });
   }
-
+  toggleBlue = () => {
+    this.setState({
+      showBlue: !this.state.showBlue
+    });
+  };
   render() {
     return (
       <div id="App">
@@ -42,6 +47,7 @@ export default class App extends Component {
           outerContainerId={"App"}
           right
           noOverlay
+          toggleBlue={this.toggleBlue}
         />
         <div id="page-wrap">
           <Switch>
@@ -50,7 +56,11 @@ export default class App extends Component {
               exact
               path="/ride"
               render={props => (
-                <Ride {...props} allStations={this.state.allStations} />
+                <Ride
+                  {...props}
+                  showBlue={this.state.showBlue}
+                  allStations={this.state.allStations}
+                />
               )}
             />
             <Route

@@ -8,6 +8,7 @@ import "./Station.css";
 
 export default class Station extends Component {
   state = {
+    ready: false,
     station: {},
     trains: {
       northTrain1: {
@@ -46,9 +47,12 @@ export default class Station extends Component {
     let result = await Axios.get(
       `https://miami-transit-api.herokuapp.com/api/TrainTracker.json?StationID=${this.props.StationID}`
     );
-    this.setState({ station: result.data.RecordSet.Record }, () => {
-      this.updateTrains();
-    });
+    this.setState(
+      { station: result.data.RecordSet.Record, ready: false },
+      () => {
+        this.updateTrains();
+      }
+    );
   };
 
   updateTrains = () => {
@@ -98,6 +102,7 @@ export default class Station extends Component {
   render() {
     if (this.props.StationID !== this.state.station.StationID) {
       this.updateStation();
+      // this.generateTrainList();
     }
 
     return (

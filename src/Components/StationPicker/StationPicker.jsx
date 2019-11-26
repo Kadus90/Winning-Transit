@@ -16,9 +16,11 @@ export default function StationPicker(props) {
 
   let buildDropdown = () => {
     return (
+      // <div className={"blueButton " + (props.showBlue ? "front" : "")}>
       <DropdownButton id="dropdown-basic-button" title="Choose Your Station">
         {printStations()}
       </DropdownButton>
+      // </div>
     );
   };
   return <div>{buildDropdown()}</div>;
