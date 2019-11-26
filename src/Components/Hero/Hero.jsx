@@ -16,7 +16,8 @@ export default function Hero() {
           Be a part of our community and learn to choose wisely on your next
           ride.
         </p>
-        <h1 className="hero-title">Welcome to WinningTransit</h1>
+        <h2 className="hero-subtitle">Welcome to </h2>
+        <h1 className="hero-title">WinningTransit</h1>
       </div>
       <div
         className="hero-background-img"

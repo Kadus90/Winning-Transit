@@ -62,7 +62,7 @@
   height: 100%;
 }
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .nav-content {
     display: flex;
     align-items: center;
@@ -77,4 +77,4 @@
   .nav-right {
     display: none;
   }
-}
+} */

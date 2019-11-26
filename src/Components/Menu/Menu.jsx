@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Styling
-import Button from "react-bootstrap/Button";
 import "./Menu.css";
 
 export default function Nav() {
@@ -11,22 +10,16 @@ export default function Nav() {
       <nav className="nav-content">
         <div className="nav-left">
           <Link to="/">
-            <img
-              className="nav-icon"
-              src="./icons/train_icon.png"
-              alt="train icon"
-            />
+            <i class="fas fa-subway"></i>
           </Link>
           <Link className="nav-title" to="/">
             <h1>WinningTransit</h1>
           </Link>
         </div>
         <div className="nav-right">
-          <Link to="/ride">
-            <Button className="nav-button">Next Ride</Button>
-          </Link>
-          <Button className="nav-button">Contribute</Button>
-          <Button className="nav-button">Feedback</Button>
+          <Link to="/ride">Next Ride</Link>
+          <Link to="">Contribute</Link>
+          <Link to="">Feedback</Link>
         </div>
       </nav>
     </div>

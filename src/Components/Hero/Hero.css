@@ -37,8 +37,11 @@
     position: relative;
   }
 
+  .hero-subtitle {
+    margin: 2rem 0;
+  }
   .hero-title {
-    margin: 3rem 0;
+    margin: 1rem 0;
   }
 
   .hero-text {
