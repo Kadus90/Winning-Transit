@@ -1,3 +1,5 @@
 .ride-page-content {
   padding-top: 6.5rem;
+  /* height: 100vh; */
+  z-index: -50;
 }

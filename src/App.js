@@ -8,6 +8,7 @@ import Home from "./Components/Home/Home";
 import Ride from "./Components/Ride/Ride";
 import Station from "./Components/Station/Station";
 import Nav from "./Components/Nav/Nav";
+import ReviewForm from "./Components/ReviewForm/ReviewForm";
 // Styling
 import "./App.css";
 
@@ -61,6 +62,13 @@ export default class App extends Component {
                   allStations={this.state.allStations}
                   StationID={props.match.params.StationID}
                 />
+              )}
+            />
+            <Route
+              exact
+              path="/rate"
+              render={props => (
+                <ReviewForm {...props} allStations={this.state.allStations} />
               )}
             />
           </Switch>
