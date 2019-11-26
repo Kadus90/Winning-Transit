@@ -1,7 +1,11 @@
-.cars {
-  display: flex;
-  margin: 10px;
-  padding: 10px;
-  flex-direction: row;
-  justify-content: space-between;
+@media (min-width: 375px) {
+  .cars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .car {
+    padding: 5px;
+  }
 }

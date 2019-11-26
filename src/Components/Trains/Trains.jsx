@@ -26,7 +26,6 @@ export default function Trains(props) {
         return (
           <div key={i}>
             <h4 className={trainStyles}>{train.data.Record.TrainID}</h4>
-            {console.log(train.cars, "***********")}
             <div className="cars">{carPrint(train.cars)}</div>
           </div>
         );
@@ -62,11 +61,11 @@ export default function Trains(props) {
     let allTrains = (
       <div className="trains-container">
         <div className="north-bound-container">
-          <h3>Northbound</h3>
+          <h3>North</h3>
           <div className="train-container">{northTrains}</div>
         </div>
         <div className="south-bound-container">
-          <h3>Southbound</h3>
+          <h3>South</h3>
           <div className="train-container">{southTrains}</div>
         </div>
       </div>
@@ -74,10 +73,12 @@ export default function Trains(props) {
     return allTrains;
   };
   let carPrint = carsArray => {
-    let cars = carsArray.map((eachItem, i) => {
+    let cars = carsArray.map((car, i) => {
       return (
         <div>
-          <p key={i}>{eachItem}</p>
+          <p key={i} className="car">
+            {car}
+          </p>
         </div>
       );
     });

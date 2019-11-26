@@ -7,7 +7,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Ride from "./Components/Ride/Ride";
 import Station from "./Components/Station/Station";
-
+import Nav from "./Components/Nav/Nav";
 // Styling
 import "./App.css";
 
@@ -35,28 +35,36 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" render={props => <Home {...props} />} />
-          <Route
-            exact
-            path="/ride"
-            render={props => (
-              <Ride {...props} allStations={this.state.allStations} />
-            )}
-          />
-          <Route
-            exact
-            path="/ride/:StationID"
-            render={props => (
-              <Station
-                {...props}
-                allStations={this.state.allStations}
-                StationID={props.match.params.StationID}
-              />
-            )}
-          />
-        </Switch>
+      <div id="App">
+        <Nav
+          pageWrapId={"page-wrap"}
+          outerContainerId={"App"}
+          right
+          noOverlay
+        />
+        <div id="page-wrap">
+          <Switch>
+            <Route exact path="/" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path="/ride"
+              render={props => (
+                <Ride {...props} allStations={this.state.allStations} />
+              )}
+            />
+            <Route
+              exact
+              path="/ride/:StationID"
+              render={props => (
+                <Station
+                  {...props}
+                  allStations={this.state.allStations}
+                  StationID={props.match.params.StationID}
+                />
+              )}
+            />
+          </Switch>
+        </div>
       </div>
     );
   }
