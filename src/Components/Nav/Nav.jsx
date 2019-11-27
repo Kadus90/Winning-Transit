@@ -47,11 +47,11 @@ export default class Nav extends Component {
             className="menu-item"
             onClick={() => this.closeMenu()}
           >
-            Contribute
+            Rate
           </Link>
-          <Link to="" className="menu-item" onClick={() => this.closeMenu()}>
+          {/* <Link to="" className="menu-item" onClick={() => this.closeMenu()}>
             Feedback
-          </Link>
+          </Link> */}
         </Menu>
       </div>
     );
