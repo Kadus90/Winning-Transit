@@ -13,7 +13,7 @@ export default class Car extends Component {
   //   }
   loadCarData = () => {
     let avg;
-    let carRating = Axios.get(
+    Axios.get(
       `https://ironrest.herokuapp.com/findOne/winningTransit?car=${this.props.car}`
     ).then(res => {
       if (res.data !== null) {

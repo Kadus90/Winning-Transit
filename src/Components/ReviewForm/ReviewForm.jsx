@@ -3,8 +3,6 @@ import { Form, Button } from "react-bootstrap";
 import Axios from "axios";
 import "./ReviewForm.css";
 
-import { Redirect } from "react-router-dom";
-
 export default class ReviewForm extends Component {
   handleSubmit = async e => {
     e.preventDefault();
@@ -33,7 +31,7 @@ export default class ReviewForm extends Component {
     if (entry.data === null) {
       console.log("Doesn't exist");
       let reviewData = { car: this.state.car, rating: [this.state.review] };
-      Axios.post("https://ironrest.herokuapp.com/winningTransit", this.state)
+      Axios.post("https://ironrest.herokuapp.com/winningTransit", reviewData)
         .then(res => {
           this.props.history.push("/");
         })

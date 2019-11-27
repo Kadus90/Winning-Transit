@@ -20,3 +20,53 @@ Dark Grey
     font-size: 10pt;
   }
 }
+
+/* Arbitrary CSS variable values for explanatory purposes */
+:root {
+  --sidebar-width: 100px;
+  --sidebar-bg-colour: blue;
+}
+
+.sidebar {
+  display: none;
+  position: relative;
+  width: var(--sidebar-width);
+}
+
+@media (max-width: 767px) {
+  html.sidebar-is-open .sidebar {
+    display: block;
+    /* 
+      The sidebar is just rendered in default position,
+      as it appears in the document flow
+     */
+  }
+
+  html.sidebar-is-open .main-content {
+    position: fixed;
+    /* 
+     It is the main content that is positioned. 
+     This is the crux of the implementation. The rest is all sugar.
+
+     Cons: the body will scroll to the top, losing your user's scroll position
+    */
+
+    /* prevents resizing from its original full-screen width */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  /* Optional enhancement: 
+     make the overscroll on iPhone the same colour as the sidebar */
+  html.sidebar-is-open body {
+    background-color: var(--sidebar-bg-colour);
+  }
+  .sidebar {
+    background-color: var(--sidebar-bg-colour);
+  }
+}

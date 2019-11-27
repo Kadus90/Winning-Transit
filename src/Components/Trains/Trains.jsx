@@ -1,5 +1,4 @@
 import React from "react";
-import Axios from "axios";
 import "./Trains.css";
 
 import Car from "../Car/Car";
@@ -81,5 +80,6 @@ export default function Trains(props) {
       return cars;
     }
   };
+
   return <div>{generateTrainList()}</div>;
 }
