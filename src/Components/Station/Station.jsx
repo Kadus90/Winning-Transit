@@ -13,30 +13,46 @@ export default class Station extends Component {
     trains: {
       northTrain1: {
         name: "NB_Time1_Train",
+        timeName: "NB_Time1",
+        time: "",
         data: {},
         cars: []
       },
       northTrain2: {
         name: "NB_Time2_Train",
+        timeName: "NB_Time2",
+        time: "",
         data: {},
         cars: []
       },
       northTrain3: {
         name: "NB_Time3_Train",
+        timeName: "NB_Time3",
+        time: "",
         data: {},
         cars: []
       },
       southTrain1: {
         name: "SB_Time1_Train",
+        timeName: "SB_Time1",
+        time: "",
         data: {},
         cars: []
       },
       southTrain2: {
         name: "SB_Time2_Train",
+        timeName: "SB_Time2",
+        time: "",
         data: {},
         cars: []
       },
-      southTrain3: { name: "SB_Time3_Train", data: {}, cars: [] }
+      southTrain3: {
+        name: "SB_Time3_Train",
+        timeName: "SB_Time3",
+        time: "",
+        data: {},
+        cars: []
+      }
     }
   };
   componentDidMount() {
@@ -69,8 +85,12 @@ export default class Station extends Component {
         update.data.RecordSet = "Data currently not available for this train.";
       }
 
+      if (this.state.station[names[train].name] !== "SCH") {
+        console.log(this.state.station[names[train].timeName]);
+      }
       names[train] = {
         ...names[train],
+        time: this.state.station[names[train].timeName],
         data: update.data.RecordSet
       };
 

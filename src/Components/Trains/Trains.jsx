@@ -27,7 +27,7 @@ export default function Trains(props) {
         // console.log(props.station); This is a reminder to go in and figure out how to get the time of the trains layered in.
         return (
           <div key={i}>
-            <h4 className={trainStyles}>{train.data.Record.TrainID}</h4>
+            <h4 className={trainStyles}>{train.time}</h4>
             <div className="cars">{carPrint(train.cars)}</div>
           </div>
         );
@@ -46,7 +46,7 @@ export default function Trains(props) {
 
         return (
           <div key={i}>
-            <h4 className={trainStyles}>{train.data.Record.TrainID}</h4>
+            <h4 className={trainStyles}>{train.time}</h4>
             <div className="cars">{carPrint(train.cars)}</div>
           </div>
         );
