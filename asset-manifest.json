@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Winning-Transit/static/css/main.cb86504e.chunk.css",
+    "main.css": "/Winning-Transit/static/css/main.9112d241.chunk.css",
     "main.js": "/Winning-Transit/static/js/main.73db5297.chunk.js",
     "main.js.map": "/Winning-Transit/static/js/main.73db5297.chunk.js.map",
     "runtime-main.js": "/Winning-Transit/static/js/runtime-main.de4a5208.js",
@@ -9,16 +9,16 @@
     "static/js/2.adb16975.chunk.js": "/Winning-Transit/static/js/2.adb16975.chunk.js",
     "static/js/2.adb16975.chunk.js.map": "/Winning-Transit/static/js/2.adb16975.chunk.js.map",
     "index.html": "/Winning-Transit/index.html",
-    "precache-manifest.3770f941eb3d7e09161785b741f7795b.js": "/Winning-Transit/precache-manifest.3770f941eb3d7e09161785b741f7795b.js",
+    "precache-manifest.04ce9a015c28854942e27484eed57eef.js": "/Winning-Transit/precache-manifest.04ce9a015c28854942e27484eed57eef.js",
     "service-worker.js": "/Winning-Transit/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/Winning-Transit/static/css/2.b0bb7f2c.chunk.css.map",
-    "static/css/main.cb86504e.chunk.css.map": "/Winning-Transit/static/css/main.cb86504e.chunk.css.map"
+    "static/css/main.9112d241.chunk.css.map": "/Winning-Transit/static/css/main.9112d241.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.de4a5208.js",
     "static/css/2.b0bb7f2c.chunk.css",
     "static/js/2.adb16975.chunk.js",
-    "static/css/main.cb86504e.chunk.css",
+    "static/css/main.9112d241.chunk.css",
     "static/js/main.73db5297.chunk.js"
   ]
 }
