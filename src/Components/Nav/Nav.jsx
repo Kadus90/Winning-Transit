@@ -17,7 +17,6 @@ export default class Nav extends Component {
 
   closeMenu() {
     this.setState({ menuOpen: false });
-    this.props.toggleBlue();
   }
 
   render() {

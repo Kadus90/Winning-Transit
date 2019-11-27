@@ -85,9 +85,9 @@ export default class Station extends Component {
         update.data.RecordSet = "Data currently not available for this train.";
       }
 
-      if (this.state.station[names[train].name] !== "SCH") {
-        console.log(this.state.station[names[train].timeName]);
-      }
+      // if (this.state.station[names[train].name] !== "SCH") {
+      //   console.log(this.state.station[names[train].timeName]);
+      // }
       names[train] = {
         ...names[train],
         time: this.state.station[names[train].timeName],

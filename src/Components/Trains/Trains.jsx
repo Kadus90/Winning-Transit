@@ -1,6 +1,8 @@
 import React from "react";
-
+import Axios from "axios";
 import "./Trains.css";
+
+import Car from "../Car/Car";
 
 export default function Trains(props) {
   let generateTrainList = () => {
@@ -24,7 +26,6 @@ export default function Trains(props) {
       if (train.data.Record != null) {
         let line = train.data.Record.LineID;
         let trainStyles = "train " + line;
-        // console.log(props.station); This is a reminder to go in and figure out how to get the time of the trains layered in.
         return (
           <div key={i}>
             <h4 className={trainStyles}>{train.time}</h4>
@@ -75,11 +76,7 @@ export default function Trains(props) {
   let carPrint = carsArray => {
     if (typeof carsArray === "object" && carsArray !== null) {
       let cars = carsArray.map((car, i) => {
-        return (
-          <div key={i}>
-            <p className="car">{car}</p>
-          </div>
-        );
+        return <Car car={car} i={i} />;
       });
       return cars;
     }

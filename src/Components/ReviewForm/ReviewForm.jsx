@@ -3,6 +3,8 @@ import { Form, Button } from "react-bootstrap";
 import Axios from "axios";
 import "./ReviewForm.css";
 
+import { Redirect } from "react-router-dom";
+
 export default class ReviewForm extends Component {
   handleSubmit = async e => {
     e.preventDefault();
@@ -14,8 +16,6 @@ export default class ReviewForm extends Component {
       `https://ironrest.herokuapp.com/findOne/winningTransit?car=${this.state.car}`
     );
 
-    console.log(entry);
-
     // If car exists, add review to the existing entry
     if (entry.data !== null) {
       console.log("There be data here");
@@ -24,7 +24,9 @@ export default class ReviewForm extends Component {
       Axios.put(
         `https://ironrest.herokuapp.com/winningTransit/${entry.data._id}`,
         reviewData
-      );
+      ).then(() => {
+        this.props.history.push("/");
+      });
     }
 
     // If car does not exist, create a new entry
@@ -32,7 +34,9 @@ export default class ReviewForm extends Component {
       console.log("Doesn't exist");
       let reviewData = { car: this.state.car, rating: [this.state.review] };
       Axios.post("https://ironrest.herokuapp.com/winningTransit", this.state)
-        .then(res => console.log(res))
+        .then(res => {
+          this.props.history.push("/");
+        })
         .catch(err => console.log(err));
     }
   };
@@ -80,7 +84,7 @@ export default class ReviewForm extends Component {
             </option>
             <option value="3">3 - Legit.</option>
             <option value="4">4 - Can't go wrong with this ride.</option>
-            <option value="5">5 - A/C is great, no leaks, strong Wi-Fi.</option>
+            <option value="5">5 - A/C is great, no leaks, safe ride :).</option>
           </Form.Control>
         </Form.Group>
         <Button variant="primary" type="submit" onClick={this.handleSubmit}>
