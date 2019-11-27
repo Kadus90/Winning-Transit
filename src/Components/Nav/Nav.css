@@ -43,7 +43,7 @@
 #page-wrap {
   text-align: center;
   height: 80vh;
-  padding-top: 15%;
+  padding-top: 30px;
   /* Prevent sidebar from showing a scrollbar on page */
   /* overflow-x: auto; */
 }

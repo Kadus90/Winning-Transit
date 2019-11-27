@@ -15,22 +15,10 @@ Dark Grey
   min-height: 100vh;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   * {
     font-size: 10pt;
   }
-}
-
-/* Arbitrary CSS variable values for explanatory purposes */
-:root {
-  --sidebar-width: 100px;
-  --sidebar-bg-colour: blue;
-}
-
-.sidebar {
-  display: none;
-  position: relative;
-  width: var(--sidebar-width);
 }
 
 @media (max-width: 767px) {
