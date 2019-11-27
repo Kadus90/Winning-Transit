@@ -22,36 +22,30 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="nav-container">
-        <Link to="/" style={{ color: "#42be08" }}>
-          <i className="fas fa-subway fa-3x"></i>
+        <div className="navLink">
+          <Link to="/ride">RIDE</Link>
+        </div>
+        <Link to="/" className="navIcon" style={{ color: "#42be08" }}>
+          <i className="fas fa-subway fa-2x"></i>
         </Link>
-        <Menu
+        <div className="navLink">
+          <Link to="/rate">RATE</Link>
+        </div>
+        <div className="nav-content">
+          {/* <div className="navLink">
+            <Link to="/">Home</Link>
+          </div> */}
+        </div>
+        {/* <Menu
           {...this.props}
           isOpen={this.state.menuOpen}
           onStateChange={state => this.handleStateChange(state)}
           closeMenu={this.closeMenu}
-        >
-          <Link className="menu-item" to="/" onClick={() => this.closeMenu()}>
-            Home
-          </Link>
-          <Link
-            to="/ride"
-            className="menu-item"
-            onClick={() => this.closeMenu()}
-          >
-            Ride
-          </Link>
-          <Link
-            to="/rate"
-            className="menu-item"
-            onClick={() => this.closeMenu()}
-          >
-            Rate
-          </Link>
-          {/* <Link to="" className="menu-item" onClick={() => this.closeMenu()}>
+        > */}
+        {/* <Link to="" className="menu-item" onClick={() => this.closeMenu()}>
             Feedback
           </Link> */}
-        </Menu>
+        {/* </Menu> */}
       </div>
     );
   }
