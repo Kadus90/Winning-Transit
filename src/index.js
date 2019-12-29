@@ -1,22 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {HashRouter} from 'react-router-dom';
 
 // Components
-import App from "./App";
+import App from './App';
 
 // Styling
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 // Services
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <HashRouter>
-    <App />
-  </HashRouter>,
-  document.getElementById("root")
+    <HashRouter>
+      <App />
+    </HashRouter>,
+    document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

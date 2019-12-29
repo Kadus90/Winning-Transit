@@ -1,61 +1,63 @@
-import React from "react";
-import { Component } from "react";
-import axios from "axios";
-import { Switch, Route } from "react-router-dom";
+import React from 'react';
+import {Component} from 'react';
+import axios from 'axios';
+import {Switch, Route} from 'react-router-dom';
 
 // Components
-import Home from "./Components/Home/Home";
-import Ride from "./Components/Ride/Ride";
-import Station from "./Components/Station/Station";
-import Nav from "./Components/Nav/Nav";
-import ReviewForm from "./Components/ReviewForm/ReviewForm";
+import Home from './Components/Home/Home';
+import Ride from './Components/Ride/Ride';
+import Station from './Components/Station/Station';
+import Nav from './Components/Nav/Nav';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
 // Styling
-import "./App.css";
+import './App.css';
 
 export default class App extends Component {
   state = {
     allStations: [],
-    showBlue: false
+    showBlue: false,
   };
 
   componentDidMount() {
     // Get Station Data
     axios
-      .get(`https://miami-transit-api.herokuapp.com/api/TrainStations.json`)
-      .then(res => {
-        let stationData = res.data.RecordSet.Record;
+        .get(`https://miami-transit-api.herokuapp.com/api/TrainStations.json`)
+        .then((res) => {
+          const stationData = res.data.RecordSet.Record;
 
-        let stationArray = stationData.map(eachStation => {
-          let id = eachStation.StationID;
-          let stationName = eachStation.Station;
-          return { StationID: id, Station: stationName };
+          const stationArray = stationData.map((eachStation) => {
+            const id = eachStation.StationID;
+            const stationName = eachStation.Station;
+            return {StationID: id, Station: stationName};
+          });
+
+          this.setState({allStations: stationArray});
         });
-
-        this.setState({ allStations: stationArray });
-      });
   }
-  toggleBlue = () => {
+
+  toggleBlue() {
     this.setState({
-      showBlue: !this.state.showBlue
+      showBlue: !this.state.showBlue,
     });
   };
+
   render() {
     return (
       <div id="App">
         <Nav
-          pageWrapId={"page-wrap"}
-          outerContainerId={"App"}
+          pageWrapId={'page-wrap'}
+          outerContainerId={'App'}
           right
           noOverlay
           toggleBlue={this.toggleBlue}
         />
         <div id="page-wrap">
           <Switch>
-            <Route exact path="/" render={props => <Home {...props} />} />
+            <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route
               exact
               path="/ride"
-              render={props => (
+              render={(props) => (
                 <Ride
                   {...props}
                   showBlue={this.state.showBlue}
@@ -66,7 +68,7 @@ export default class App extends Component {
             <Route
               exact
               path="/ride/:StationID"
-              render={props => (
+              render={(props) => (
                 <Station
                   {...props}
                   allStations={this.state.allStations}
@@ -77,7 +79,7 @@ export default class App extends Component {
             <Route
               exact
               path="/rate"
-              render={props => (
+              render={(props) => (
                 <ReviewForm {...props} allStations={this.state.allStations} />
               )}
             />
@@ -87,28 +89,3 @@ export default class App extends Component {
     );
   }
 }
-
-// Create the collection
-// axios
-//   .post("https://ironrest.herokuapp.com/createCollection/winningTransit")
-//   .then(res => {
-//     console.log(res.data);
-//   });
-
-// Post to the collection
-// axios
-//   .post("https://ironrest.herokuapp.com/winningTransit", {
-//     testing: "Winning"
-//   })
-//   .then(res => {
-//     console.log(res.data);
-//   });
-
-// Delete an item from the collection.
-// axios
-//   .delete(
-//     "https://ironrest.herokuapp.com/winningTransit/5dd43f3e7b55290017a2b1aa"
-//   )
-//   .then(res => {
-//     console.log(res.data);
-//   });
