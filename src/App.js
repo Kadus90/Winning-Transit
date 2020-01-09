@@ -79,9 +79,7 @@ export default class App extends Component {
             <Route
               exact
               path="/rate"
-              render={(props) => (
-                <ReviewForm {...props} allStations={this.state.allStations} />
-              )}
+              render={props => <ReviewForm {...props} allStations={this.state.allStations} />}
             />
           </Switch>
         </div>
